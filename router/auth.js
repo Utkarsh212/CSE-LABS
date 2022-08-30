@@ -8,10 +8,6 @@ const sendEmail = require('../middleware/sendEmail');
 const authenticate = require('../middleware/authenticate');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send(`Hello World`);
-});
-
 router.post('/signup', async (req, res) => {
     const { name, email, phone, password, cpassword } = req.body;
     if (!name || !email || !phone || !password || !cpassword) {
