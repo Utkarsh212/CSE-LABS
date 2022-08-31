@@ -54,7 +54,7 @@ function Signup() {
 
     return (
         <div className="py-10 bg-gray-100 min-h-[88vh]">
-            {currentUser.signedIn ? navigate('/') : <div className="max-w-sm p-6 m-auto space-y-5 bg-white rounded shadow-xl sm:max-w-md">
+            {currentUser.signedIn ? navigate('/') : <div className="max-w-xs p-6 m-auto space-y-5 bg-white rounded shadow-xl sm:max-w-md">
                 <h1 className="text-3xl pt-5 text-center font-semibold font-sans">Sign Up</h1>
                 <form onSubmit={handleSignup} className="space-y-4">
                     <div>

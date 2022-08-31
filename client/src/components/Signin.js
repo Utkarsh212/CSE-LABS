@@ -43,7 +43,7 @@ function Signin() {
     
     return (
         <div className="bg-gray-100 h-[88vh] py-24">
-            {currentUser.signedIn ? navigate("/") : <div className="max-w-sm p-6 m-auto bg-white rounded shadow-xl sm:max-w-md">
+            {currentUser.signedIn ? navigate("/") : <div className="max-w-xs p-6 m-auto bg-white rounded shadow-xl sm:max-w-md">
             <h1 className="text-3xl pt-5 text-center font-semibold font-sans">Sign-in</h1>
                 <form className="mt-6" onSubmit={handleSignin}>
                     <div>
