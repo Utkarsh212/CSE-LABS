@@ -18,7 +18,7 @@ import Passwordreset from './components/Passwordreset';
 function App() {
   return (
     <Routes>
-      <Route exact path="/" element={<Layout />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="labs" element={<Labs />} />
