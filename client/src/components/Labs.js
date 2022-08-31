@@ -77,14 +77,12 @@ function Labs() {
   return (
     <div className="relative bg-gray-50 h-[88vh]">
       <div className="flex justify-evenly items-center px-5 pt-14 pb-5 md:justify-center">
-        <div className='flex justify-center items-center w-full'>
           <input
             onChange={event => { setSearchTerm(event.target.value) }}
             type="text"
             className="block w-1/2 h-10 px-4 py-6 bg-white border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none md:max-w-md"
             placeholder="Search..."
           />
-        </div>
         {currentUser.admin && <button
           className="min-w-fit static h-10 top-16 right-20 px-4 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out md:absolute"
           onClick={() => setDisplay(!display)}
