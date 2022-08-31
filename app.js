@@ -14,13 +14,13 @@ require('./db/connection');
 
 const Port = process.env.PORT || 8000;
 
+app.use(require('./router/auth'));
+
 app.use(express.static(path.join(__dirname, "./client/build")));
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build', 'index.html'));
 });
-
-app.use(require('./router/auth'));
 
 app.listen(Port, () => {
     console.log(`Server listening on: http://localhost:${Port}`);
