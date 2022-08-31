@@ -8,8 +8,8 @@ module.exports = {
       },
       keyframes: {
         fadeIn: {
-          from: { transform: 'translateY(25%)', opacity:0.1 },
-          to: { transform: 'translateY(0%)', opacity:1 },
+          from: { transform: 'translateY(25%)', opacity: 0.1 },
+          to: { transform: 'translateY(0%)', opacity: 1 },
         }
       }
     },
