@@ -27,7 +27,7 @@ function App() {
           <Route path="signin" element={<Signin />} />
           <Route path="password-reset" element={<Resetemail />} />
           <Route path="password-reset/:userId/:token" element={<Passwordreset />} />
-          <Route path="*" element={<Error />} />
+          <Route path="/*" element={<Error />} />
       </Route>
     </Routes>
   );
