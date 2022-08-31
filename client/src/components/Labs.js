@@ -55,7 +55,8 @@ function Labs() {
       const res = await fetch('/labs', {
         method: "GET",
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          "Accept" : "application/json"
         }
       })
       const data = await res.json();
