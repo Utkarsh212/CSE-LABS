@@ -31,7 +31,7 @@ function Contact() {
 
     return (
         <div className="py-24 bg-gray-100 h-[88vh]">
-            <div className="max-w-sm p-6 m-auto space-y-4 bg-white rounded shadow-xl sm:max-w-lg">
+            <div className="max-w-xs p-6 m-auto space-y-4 bg-white rounded shadow-xl sm:max-w-lg">
             <h1 className="text-3xl pt-5 text-center font-semibold font-sans">Contact</h1>
                 <form onSubmit={handleSignup} className='space-y-5'>
                     <div className='space-y-5 flex flex-col justify-between sm:space-y-0 sm:flex-row'>
