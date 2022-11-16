@@ -7,7 +7,7 @@ const labsSchema = mongoose.Schema({
         required: true,
         unique: true,
         minLength: [5, 'Title must contain minimum 5 characters'],
-        maxLength: [50, 'Title must contain maximum 30 characters']
+        maxLength: [100, 'Title must contain maximum 50 characters']
     },
     creator: {
         type: String,
