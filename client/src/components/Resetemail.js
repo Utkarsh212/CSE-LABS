@@ -27,7 +27,7 @@ function Resetemail() {
         }
     }
     return (
-        <div className='py-24 bg-gray-100 h-[88vh]'>
+        <div className='py-24 h-[88vh]'>
             {currentUser.signedIn ? navigate('/') : <div className='flex flex-col justify-center items-center max-w-xs bg-white p-6 m-auto rounded shadow-xl sm:max-w-lg'>
                 <h1 className="text-3xl pt-5 text-center font-semibold font-sans">Reset Password</h1>
                 <p className='text-lg mt-4'>Please Enter Email on which reset link is to be sent</p>

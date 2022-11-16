@@ -53,7 +53,7 @@ function Signup() {
     }
 
     return (
-        <div className="py-10 bg-gray-100 min-h-[88vh]">
+        <div className="py-10 min-h-[88vh]">
             {currentUser.signedIn ? navigate('/') : <div className="max-w-xs p-6 m-auto space-y-5 bg-white rounded shadow-xl sm:max-w-md">
                 <h1 className="text-3xl pt-5 text-center font-semibold font-sans">Sign Up</h1>
                 <form onSubmit={handleSignup} className="space-y-4">
@@ -136,6 +136,13 @@ function Signup() {
                             autoComplete="off"
                             className="block w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"
                         />
+                    </div>
+                    <div>
+                        <h3 className="block text-md font-medium text-gray-700 undefined">Password Policy</h3>
+                        <ul>
+                            <li className='text-sm'>Password must contain minimum 8 Characters.</li>
+                            <li className='text-sm'>There must be atleast 1 Uppercase, 1 Lowercase, 1 Numeric and 1 Special Character.</li>
+                        </ul>
                     </div>
                     <div className="flex items-center mt-4">
                         <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500">

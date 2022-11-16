@@ -46,7 +46,7 @@ function Passwordreset() {
     }
 
     return (
-        <div className='py-24 bg-gray-100 h-[88vh]'>
+        <div className='py-24 h-[88vh]'>
             {currentUser.signedIn ? navigate('/') : <div className='flex flex-col justify-center items-center max-w-xs bg-white p-6 m-auto rounded shadow-xl sm:max-w-lg'>
                 <h1 className="text-3xl pt-5 text-center font-semibold font-sans">Reset Password</h1>
                 <p className='text-lg mt-4'>Please enter new password</p>
@@ -80,10 +80,17 @@ function Passwordreset() {
                                 autoComplete="off"
                                 className="block w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"
                             />
+                            <div className='mt-2'>
+                                <h3 className="block text-md font-medium text-gray-700 undefined">Password Policy</h3>
+                                <ul>
+                                    <li className='text-sm'>Password must contain minimum 8 Characters.</li>
+                                    <li className='text-sm'>There must be atleast 1 Uppercase, 1 Lowercase, 1 Numeric and 1 Special Character.</li>
+                                </ul>
+                            </div>
                         </div>
                         <button
                             className="mt-4 w-1/3 min-w-fit px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
-                            Send
+                            Reset
                         </button>
                     </form>
             </div>}

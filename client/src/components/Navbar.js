@@ -34,7 +34,7 @@ function Navbar({ signedInfo, setSignedInfo }) {
     }
 
     return (
-        <nav className="w-full bg-white-500 md:h-[12vh]">
+        <nav className="w-full bg-white md:h-[12vh]">
             <div className="p-8 justify-between mx-auto md:flex md:items-center md:pt-7 md:pb-5 md:pl-16 md:pr-16">
                 <div>
                     <div className="flex items-center justify-between md:block">
