@@ -176,7 +176,7 @@ function Labs() {
           } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
             return val;
           }
-        }).map(lab => <Card key={lab._id} _id={lab._id} title={lab.title} creator={lab.creator} link={lab.link} getLabs={getLabs} admin={currentUser.admin} />)}
+        }).map(lab => <Card key={lab._id} _id={lab._id} title={lab.title} creator={lab.creator} link={lab.link} manualLink={lab.manualLink} getLabs={getLabs} admin={currentUser.admin} />)}
       </div>
     </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Card({ title, creator, link, _id, getLabs, admin }) {
+function Card({ title, creator, link, _id, getLabs, admin, manualLink }) {
   const removeLab = async () => {
     const res = await fetch('/labs', {
       method: "DELETE",
@@ -44,14 +44,14 @@ function Card({ title, creator, link, _id, getLabs, admin }) {
           {`Created By: ${creator}`}
         </p>
         <div className='flex justify-start items-center space-x-5'>
-          <a href="https://google.com" target="_blank" rel="noreferrer">
+          <a href={link} target="_blank" rel="noreferrer">
             <button
               className=" inline-block px-4 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
               START LAB
             </button>
           </a>
-          <a href="https://google.com" target="_blank" rel="noreferrer">
+          <a href={manualLink} target="_blank" rel="noreferrer">
             <button
               className=" inline-block px-4 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
             >
