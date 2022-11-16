@@ -6,7 +6,7 @@ const labsSchema = mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        minLength: [5, 'Title must contain minimum 5 characters'],
+        minLength: [2, 'Title must contain minimum 2 characters'],
         maxLength: [100, 'Title must contain maximum 50 characters']
     },
     creator: {
@@ -27,6 +27,7 @@ const labsSchema = mongoose.Schema({
     },
     manualLink: {
         type: String,
+        required: true,
         validate(value){
             if(!validator.isURL(value)){
                 throw new Error("Invalid URL")
