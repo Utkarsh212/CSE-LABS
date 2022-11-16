@@ -9,7 +9,8 @@ function Labs() {
   const [addLabData, setAddLabData] = useState({
     title: "",
     creator: "",
-    link: ""
+    link: "",
+    manualLink: ""
   });
 
   const handleChange = (event) => {
@@ -23,13 +24,13 @@ function Labs() {
   const handleLabAddition = async (event) => {
     event.preventDefault();
     try {
-      const { title, creator, link } = addLabData;
+      const { title, creator, link, manualLink } = addLabData;
       const res = await fetch('/labs', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ title, creator, link })
+        body: JSON.stringify({ title, creator, link, manualLink })
       })
 
       const data = await res.json();
@@ -40,7 +41,8 @@ function Labs() {
         setAddLabData({
           title: "",
           creator: "",
-          link: ""
+          link: "",
+          manualLink: ""
         })
         getLabs();
       }
@@ -94,7 +96,7 @@ function Labs() {
 
       {currentUser.admin && <div className={`w-full max-w-sm p-6 mx-auto mb-5 rounded sm:p-3 sm:max-w-screen-xl ${display ? "hidden" : "block"}`}>
         <form onSubmit={handleLabAddition}>
-          <div className="flex flex-col justify-between items-stretch m-auto md:flex-row md:items-end md:max-w-screen-md">
+          <div className="flex flex-col justify-between items-stretch m-auto md:flex-row md:items-end md:justify-between md:space-x-5 md:max-w-screen-md">
             <div className="sm:mt-4">
               <label
                 htmlFor="title"
@@ -138,6 +140,22 @@ function Labs() {
                 type="text"
                 name="link"
                 value={addLabData.link}
+                onChange={handleChange}
+                autoComplete="off"
+                className="block w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"
+              />
+            </div>
+            <div className="mt-4">
+              <label
+                htmlFor="link"
+                className="block text-sm font-medium text-gray-700 undefined"
+              >
+                Manual Link
+              </label>
+              <input
+                type="text"
+                name="manualLink"
+                value={addLabData.manualLink}
                 onChange={handleChange}
                 autoComplete="off"
                 className="block w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:border-gray-500 focus:outline-none"

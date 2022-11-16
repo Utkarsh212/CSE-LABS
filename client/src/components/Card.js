@@ -37,17 +37,28 @@ function Card({ title, creator, link, _id, getLabs, admin }) {
         </svg>
       </div>}
       <div className="p-4">
-        <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
+        <h5 title={title} className="text-gray-900 text-xl leading-tight font-medium mb-2 text-ellipsis whitespace-nowrap overflow-hidden">
           {title}
         </h5>
         <p className="text-gray-700 text-base mb-4">
           {`Created By: ${creator}`}
         </p>
-        <button
-          className=" inline-block px-4 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
-        >
-          Button
-        </button>
+        <div className='flex justify-start items-center space-x-5'>
+          <a href="https://google.com" target="_blank" rel="noreferrer">
+            <button
+              className=" inline-block px-4 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            >
+              START LAB
+            </button>
+          </a>
+          <a href="https://google.com" target="_blank" rel="noreferrer">
+            <button
+              className=" inline-block px-4 py-2 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            >
+              MANUAL
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   )
