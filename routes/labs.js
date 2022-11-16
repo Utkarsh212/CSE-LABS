@@ -8,11 +8,11 @@ router.post('/labs', authenticate, async (req, res) => {
         return res.status(401).json({ message: 'Access Denied' })
     }
     try {
-        const { title, creator, link } = req.body
+        const { title, creator, link, manualLink } = req.body
         if (!title || !creator || !link) {
             return res.status(422).json({ message: 'Some of the field(s) are empty' })
         }
-        const newLab = new Lab({title, creator, link})
+        const newLab = new Lab({title, creator, link, manualLink})
         await newLab.save()
         return res.status(200).json({message: `Lab: ${title} Added Successfully`})
     } catch (err) {

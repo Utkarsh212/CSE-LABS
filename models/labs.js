@@ -24,6 +24,14 @@ const labsSchema = mongoose.Schema({
                 throw new Error("Invalid URL")
             }
         }
+    },
+    manualLink: {
+        type: String,
+        validate(value){
+            if(!validator.isURL(value)){
+                throw new Error("Invalid URL")
+            }
+        }
     }
 });
 
