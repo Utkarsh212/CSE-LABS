@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
+const mongoose = require('mongoose')
+const validator = require('validator')
 
 const labsSchema = mongoose.Schema({
     title: {
@@ -27,6 +27,6 @@ const labsSchema = mongoose.Schema({
     }
 });
 
-const Lab = mongoose.model("LAB", labsSchema);
+const Lab = mongoose.model("LAB", labsSchema)
 
-module.exports = Lab;
+module.exports = Lab

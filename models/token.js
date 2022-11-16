@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const tokenSchema = mongoose.Schema({
     userId: {
@@ -17,5 +17,5 @@ const tokenSchema = mongoose.Schema({
     }
 })
 
-const Token = mongoose.model("TOKEN", tokenSchema);
-module.exports = Token;
+const Token = mongoose.model("TOKEN", tokenSchema)
+module.exports = Token

@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer')
 
 module.exports = async (email, subject, html) => {
     try {
@@ -10,7 +10,7 @@ module.exports = async (email, subject, html) => {
                 user: process.env.USER,
                 pass: process.env.PASS,
             },
-        });
+        })
 
         await transporter.sendMail({
             from: process.env.USER,

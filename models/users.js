@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
-const validator = require('validator');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose')
+const validator = require('validator')
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         validate(value) {
             if(!validator.isEmail(value)) {
-                throw new Error("Invalid Email");
+                throw new Error("Invalid Email")
             }
         }
     },
@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
         unique: true,
         validate(value) {
             if(!validator.isMobilePhone(value.toString(), 'en-IN')){
-                const error = new Error("Invalid Phone Number");
+                const error = new Error("Invalid Phone Number")
                 return error;
             }
         }
@@ -36,7 +36,7 @@ const userSchema = new mongoose.Schema({
         required: true,
         validate(value) {
             if(!validator.isStrongPassword(value)){
-                throw new Error("Password Strength is not good");
+                throw new Error("Password Strength is not good")
             }
         }
     },
@@ -56,22 +56,22 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre('save', async function (next) {
     if (this.isModified('password')) {
-        this.password = await bcrypt.hash(this.password, 12);
+        this.password = await bcrypt.hash(this.password, 12)
     }
-    next();
+    next()
 });
 
 userSchema.methods.generateAuthToken = async function() {
     try {
-        let token = jwt.sign({email: this.email}, process.env.SECRET_KEY);
-        this.token = token;
-        await this.save();
+        let token = jwt.sign({email: this.email}, process.env.SECRET_KEY)
+        this.token = token
+        await this.save()
         return token;
     } catch (err) {
-        console.log(err);
+        console.log(err)
     }
 };
 
-const User = mongoose.model('USER', userSchema);
+const User = mongoose.model('USER', userSchema)
 
-module.exports = User;
+module.exports = User
