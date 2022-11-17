@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate, useLocation, useOutletContext } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
 
 function Passwordreset() {
     const navigate = useNavigate();
@@ -31,7 +32,7 @@ function Passwordreset() {
             });
             const data = await res.json();
             if (res.status !== 200 || !data) {
-                window.alert(data.message);
+                toast.error(data.message);
             } else {
                 window.alert(data.message);
                 setFormData({
@@ -41,7 +42,7 @@ function Passwordreset() {
                 navigate('/signin')
             }
         } catch (err) {
-            window.alert(err.message);
+            toast.error("Reset Password Failed. Please Try Again!!");
         }
     }
 
@@ -94,6 +95,7 @@ function Passwordreset() {
                         </button>
                     </form>
             </div>}
+            <Toaster />
         </div>
     )
 }

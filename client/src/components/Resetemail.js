@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { useNavigate, useOutletContext } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
 
 function Resetemail() {
     const [currentUser, getCurrentUser] = useOutletContext();
     const navigate = useNavigate();
     const [email, setEmail] = useState('')
+
     const handleClick = async (event) => {
         event.preventDefault();
         try {
@@ -17,13 +19,13 @@ function Resetemail() {
             });
             const data = await res.json();
             if (res.status !== 200 || !data) {
-                window.alert(data.message);
+                toast.error('Email Not Registered')
             } else {
-                window.alert(data.message);
+                toast.success('Email Sent Successfully. Please Check Your Inbox!!')
                 setEmail('')
             }
         } catch (err) {
-            window.alert(err.message);
+            toast.error('Error Sending Reset Link. Please Try Again Later!!')
         }
     }
     return (
@@ -46,6 +48,7 @@ function Resetemail() {
                         </button>
                     </form>
             </div>}
+            <Toaster />
         </div>
     )
 }

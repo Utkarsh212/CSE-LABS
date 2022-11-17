@@ -1,4 +1,5 @@
 import React from 'react'
+import toast, { Toaster } from 'react-hot-toast';
 
 function Card({ title, creator, link, _id, getLabs, admin, manualLink }) {
   const removeLab = async () => {
@@ -14,7 +15,7 @@ function Card({ title, creator, link, _id, getLabs, admin, manualLink }) {
     if (res.status !== 200 || !data) {
       window.alert(data.message);
     } else {
-      window.alert("Lab Removed Successfully");
+      toast.success("Lab Removed Successfully");
       getLabs();
     }
   }
@@ -61,6 +62,7 @@ function Card({ title, creator, link, _id, getLabs, admin, manualLink }) {
           </a>
         </div>
       </div>
+      <Toaster />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate, useOutletContext } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Signin() {
     const [currentUser, getCurrentUser] = useOutletContext();
@@ -30,7 +31,7 @@ function Signin() {
 
         const data = await res.json();
         if(res.status !== 200 || !data) {
-            window.alert(data.message);
+            toast.error(data.message)
         } else {
             setLoginCredentials({
                 email: "",
@@ -79,6 +80,7 @@ function Signin() {
                 <p className="mt-8 text-center text-gray-700"> Don't have an account? <Link to="/signup"
                     className="font-medium text-blue-500 hover:underline">Sign up</Link></p>
             </div>}
+            <Toaster />
         </div>
     )
 }

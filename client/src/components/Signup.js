@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useOutletContext } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Signup() {
     const [currentUser, getCurrentUser] = useOutletContext();
@@ -35,9 +36,9 @@ function Signup() {
             });
             const data = await res.json();
             if (res.status !== 200 || !data) {
-                window.alert(data.message);
+                toast.error(data.message);
             } else {
-                window.alert("Registration Successfull");
+                toast.success("Registration Successfull");
                 setFormData({
                     name: "",
                     email: "",
@@ -48,7 +49,7 @@ function Signup() {
                 navigate('/signin');
             }
         } catch (err) {
-            console.log(err.message);
+            toast.error('User Registration Failed. Please Try Again!!')
         }
     }
 
@@ -159,6 +160,7 @@ function Signup() {
                     </span>
                 </div>
             </div>}
+            <Toaster />
         </div>
     )
 }

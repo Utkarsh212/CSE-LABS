@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useOutletContext, useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 import Card from './Card'
 
 function Labs() {
@@ -36,9 +37,9 @@ function Labs() {
 
       const data = await res.json();
       if (res.status !== 200 || !data) {
-        window.alert(data.message);
+        toast.error(data.message);
       } else {
-        window.alert("Lab Added Successfully");
+        toast.success("Lab Added Successfully");
         setAddLabData({
           title: "",
           creator: "",
@@ -181,6 +182,7 @@ function Labs() {
           }).map(lab => <Card key={lab._id} _id={lab._id} title={lab.title} creator={lab.creator} link={lab.link} manualLink={lab.manualLink} getLabs={getLabs} admin={currentUser.admin} />)}
         </div>
       </div>}
+      <Toaster />
     </>
   )
 }
