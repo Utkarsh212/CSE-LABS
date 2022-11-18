@@ -19,11 +19,11 @@ const labsSchema = mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        validate(value){
+        /* validate(value){
             if(!validator.isURL(value)){
                 throw new Error("Invalid URL")
             }
-        }
+        } */
     },
     manualLink: {
         type: String,
