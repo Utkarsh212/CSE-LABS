@@ -52,14 +52,14 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     }
-});
+})
 
 userSchema.pre('save', async function (next) {
     if (this.isModified('password')) {
-        this.password = await bcrypt.hash(this.password, 12)
+        this.password = await bcrypt.hash(this.password, process.env.COST)
     }
     next()
-});
+})
 
 userSchema.methods.generateAuthToken = async function() {
     try {
@@ -70,7 +70,7 @@ userSchema.methods.generateAuthToken = async function() {
     } catch (err) {
         console.log(err)
     }
-};
+}
 
 const User = mongoose.model('USER', userSchema)
 
