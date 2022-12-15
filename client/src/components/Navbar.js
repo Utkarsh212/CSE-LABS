@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import { ReactComponent as Logo } from '../electronics.svg';
+import { ReactComponent as Logo } from '../cse.svg';
 
 function Navbar({ signedInfo, setSignedInfo }) {
     const location = useLocation().pathname.split('/');
@@ -39,7 +39,7 @@ function Navbar({ signedInfo, setSignedInfo }) {
                 <div>
                     <div className="flex items-center justify-between md:block">
                         <NavLink to="/">
-                            <Logo fill="#3B82F6" className="w-8 md:w-10" />
+                            <Logo className="w-8 md:w-10" />
                         </NavLink>
                         <div className="md:hidden">
                             <button
@@ -92,7 +92,7 @@ function Navbar({ signedInfo, setSignedInfo }) {
                                 <NavLink to="/about">About Us</NavLink>
                             </li>
                             <li className={`${location[1] === "labs" ? 'text-blue-500' : ''}`}>
-                                <NavLink to="/labs">Labs</NavLink>
+                                <NavLink to="/labs">Resources</NavLink>
                             </li>
                             <li className={`${location[1] === "contact" ? 'text-blue-500' : ''}`}>
                                 <NavLink to="/contact">Contact Us</NavLink>
